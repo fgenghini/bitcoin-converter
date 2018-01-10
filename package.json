@@ -2,17 +2,24 @@
   "name": "bitcoin-converter",
   "version": "1.0.0",
   "description": "A CLI app to convert Bitcoin to any currency.",
-  "main": "index.js",
+  "main": "src/main.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
-    "test:watch": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
-    "test:coverage": "nyc npm test"
+    "test:watch": "npm run test -- --watch",
+    "test:coverage": "nyc npm test",
+    "clear": "./node_modules/.bin/rimraf bin",
+    "build": "npm run clear && ./node_modules/.bin/babel --out-dir bin src"
   },
   "nyc": {
-    "reporter": ["text", "html"],
-    "exclude": ["tests/**"]
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
   },
   "repository": {
     "type": "git",
@@ -20,6 +27,7 @@
   },
   "keywords": [
     "js",
+    "tdd",
     "bitcoin",
     "converter"
   ],
@@ -30,6 +38,7 @@
   },
   "homepage": "https://github.com/fgenghini/bitcoin-converter#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
@@ -38,9 +47,9 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.5.1",
     "husky": "^0.14.3",
     "mocha": "^4.1.0",
-    "nyc": "^11.4.1"
+    "nyc": "^11.4.1",
+    "rimraf": "^2.6.2"
   }
 }

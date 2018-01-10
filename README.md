@@ -1,10 +1,10 @@
-# JS TDD Course
+# Bitcoin Converter
 
-JS Code used during JS TDD Course.
+A CLI app to convert Bitcoin to any currency.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/fgenghini/js-tdd-course/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/fgenghini/js-tdd-course/tags).
 
 ## Authors
 
